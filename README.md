@@ -2,7 +2,7 @@
 
 ## Overview
 
-Ulcerative colitis (UC), a long-lasting inflammatory disease of the colon damages the epithelial lining of the intestine. This damage causes the bacteria in the gut to leak into the tissues thus triggering inflammation. In this paper, researchers experimentally induced UC in mice models using dextran sodium sulfate (DSS).
+Ulcerative colitis (UC), a long-lasting inflammatory disease of the colon damages the epithelial lining of the intestine. This damage causes the bacteria in the gut to leak into the tissues thus triggering inflammation. In this paper, researchers experimentally induced UC in mice models using dextran sodium sulfate (DSS). By integrating multi-omic data where host transcriptomics denotes inflammation of macrophages, and 16s rRNA seq denotes microbial community shifts, the authors propose  dysbiosis results in  altered microbial metabolic outputs leading to macrophage inflammasome activation ultimately driving IL-1β-driven inflammation. 
 
 ## Dataset details _(data_inspection.py)_
 
