@@ -41,9 +41,11 @@ After PCA, a graph-based clustering method called **Leiden** is used to connect 
 
 ## Key Highlights
 1. Quantitatively reproduced the epithelial reduction reported in Figure 1f in the paper. That is, a reduction in proportion of epithelial cells in CC and AC was observed.
-<img width="958" height="157" alt="image" src="https://github.com/user-attachments/assets/33b125d0-f63a-40a3-ad3f-7f297d90187b" />
-2. CC shows pronounced M1 polarization relative to both AC and HC. There is an increased population of M2B in AC when compared to CC. This ia also consistent with M2B being an inflammation-associated phenotype largely absent at healthy states.
 
+   <img width="958" height="157" alt="image" src="https://github.com/user-attachments/assets/33b125d0-f63a-40a3-ad3f-7f297d90187b" />
+2. CC shows pronounced M1 polarization relative to both AC and HC. There is an increased population of M2B in AC when compared to CC. This ia also consistent with M2B being an inflammation-associated phenotype largely absent at healthy states.
+3. Il1b increased in M1, M2A, M2B, M2C, M2D in both AC and CC compared to HC.
+4. Genes Namptp, Cyba, Ncf1p, Ncf2p, Ncf4 contradict paper's finding (yet to be investigated).
 
 
 
