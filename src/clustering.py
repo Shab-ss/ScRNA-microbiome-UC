@@ -60,7 +60,7 @@ adata.write("data/processed/mmColon_qc_clustered.h5ad")
 
 mac = adata[adata.obs['celltype_minor'] == 'macrophage'].copy()
 
-# Macrophage subset composition per condition (Fig.3b)
+# Macrophage subset composition per condition 
 comp = pd.crosstab(mac.obs['condition'], mac.obs['celltype_subset'], normalize='index')
 print(comp)
 
@@ -69,10 +69,10 @@ plt.ylabel("Proportion of macrophages")
 plt.savefig("results/figures/macrophage_subset_composition.png", dpi=300, bbox_inches='tight')
 plt.close()
 
-# Nampt / NOX2 subunit expression across conditions (Fig. 4b)
+# Nampt / NOX2 subunit expression across conditions
 genes_of_interest = ['Nampt', 'Cybb', 'Cyba', 'Ncf1', 'Ncf2', 'Ncf4']
 sc.pl.violin(mac, genes_of_interest, groupby='condition', rotation=90,
              save="_nampt_nox2_macrophages.png")
 
-# Il1b across macrophage subsets and conditions (Fig.3d)
+# Il1b across macrophage subsets and conditions 
 sc.pl.violin(mac, 'Il1b', groupby='celltype_subset', save="_il1b_subsets.png")
