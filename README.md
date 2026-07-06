@@ -40,8 +40,9 @@ After PCA, a graph-based clustering method called **Leiden** is used to connect 
 
 
 ## Key Highlights
-1. Quantitatively reproduced the the epithelial reduction reported in Figure 1f in the paper. That is, a reduction in proportion of epithelial cells in CC and AC was observed.
-
+1. Quantitatively reproduced the epithelial reduction reported in Figure 1f in the paper. That is, a reduction in proportion of epithelial cells in CC and AC was observed.
+<img width="958" height="157" alt="image" src="https://github.com/user-attachments/assets/33b125d0-f63a-40a3-ad3f-7f297d90187b" />
+2. 
 
 
 
