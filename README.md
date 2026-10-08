@@ -19,7 +19,7 @@ Downloaded the AnnData object - `mmColon_single_cell_85K.h5ad`. This is a python
 - `.obsm` / `.varm` is where multi-dimensional annotations for cells or genes, embeddings are stored here
 - `.layers` stores alternative representations of expression data (e.g., raw counts, normalized data, or scaled data) within the same object and `.uns` is for unstructured metadata for storing something else.
 
-### Inspection
+## Inspection
 According to the experimental design, colon tissue from 10 mice at three different time points were collected and individual cells were isolated.
 
 1. Shape of gene expression matrix is 84,612 × 18,416 with raw counts. Each cell is mapped to thousands of genes - Curse of dimensionality.
