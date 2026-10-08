@@ -49,3 +49,8 @@ After PCA, a graph-based clustering method called **Leiden** is used to connect 
 
 
 
+
+## Personal motivation and Comments
+
+Although this project was carried out to understand the overall workflow of an sc-RNA seq pipeline and integrating it with gut metabarcoding data, this specific topic of UC was motivated after reading about the physiological, societal and mental burden of patients with UC. Several studies indicate that chronic illnesses like UC significantly compromise the emotional well-being, particularly among populations that are further impacted by economical and societal burden. Bioinformatics analyses help us dive deep into understanding the development and progression offering improved diagnosis and treatment across populations. 
+
