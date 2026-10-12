@@ -9,8 +9,10 @@ Ulcerative colitis (UC), a long-lasting inflammatory disease of the colon damage
 1. How do the gut microbiota and host cellular immune responses differ between acute and chronic colitis?
 2. Are microbiota changes associated with NLRP3/NAMPT-driven inflammation seen during UC?
 
-## Dataset details _(data_inspection.py)_
+## Experimental Design (as in paper)
+Colon tissue from 10 mice at three different time points were collected and individual cells were isolated using the 10X Genomics GEM Single Cell 3′ RNA technology. The generated cDNA were sequenced with Illumina, and CellRanger was used to align the sequence to the reference. Finally, a cell x gene count matrix was generated. 
 
+## Dataset details _(data_inspection.py)_
 ### AnnData Object
 Downloaded the AnnData object - `mmColon_single_cell_85K.h5ad`. This is a python data structure used in `scverse` to handle single cell sequencing datasets. Structure of AnnData object includes 
 - `.X` which is the primary data matrix with cells as rows and genes as columns, the values are gene expression values.
@@ -20,12 +22,11 @@ Downloaded the AnnData object - `mmColon_single_cell_85K.h5ad`. This is a python
 - `.layers` stores alternative representations of expression data (e.g., raw counts, normalized data, or scaled data) within the same object and `.uns` is for unstructured metadata for storing something else.
 
 ## Inspection
-According to the experimental design, colon tissue from 10 mice at three different time points were collected and individual cells were isolated.
 
 1. Shape of gene expression matrix is 84,612 × 18,416 with raw counts. Each cell is mapped to thousands of genes - Curse of dimensionality.
 2. cell metadata contains: 'sid', 'n_genes', 'condition', 'batch', 'sample', 'celltype_major', 'celltype_minor', 'celltype_subset'
    a. Conditions include Acute colitis (AC), chronic colitis (CC), and healthy condition.
-4. gene metadata contains: 'gene_ids', 'feature_types', 'genome', 'n_cells'
+3. gene metadata contains: 'gene_ids', 'feature_types', 'genome', 'n_cells'
 
 ## Quality Control
 Calculated QC metrics with `scanpy.pp.calculate_qc_metrics`. 
