@@ -2,10 +2,17 @@
 
 ## Overview
 
-Ulcerative colitis (UC), a long-lasting inflammatory disease of the colon damages the epithelial lining of the intestine. This damage causes the bacteria in the gut to leak into the tissues thus triggering inflammation. In this paper, researchers experimentally induced UC in mice models using dextran sodium sulfate (DSS). By parallely integrating multi-omic data where host transcriptomics denotes inflammation of macrophages, and 16s rRNA seq denotes microbial community shifts, the authors propose  dysbiosis results in  altered microbial metabolic outputs leading to macrophage inflammasome activation ultimately driving IL-1β-driven inflammation.
+Ulcerative colitis (UC), a long-lasting inflammatory disease of the colon damages the epithelial lining of the intestine. This damage causes the bacteria in the gut to leak into the tissues thus triggering inflammation. In this paper, researchers experimentally induced UC in mice models using dextran sodium sulfate (DSS). Changing the dose and frequency helps understand the progression of acute UC to chronic UC. By parallely integrating multi-omic data where host transcriptomics denotes inflammation of macrophages, and 16s rRNA seq denotes microbial community shifts, the authors propose that dysbiosis results in  altered microbial metabolic outputs leading to macrophage inflammasome activation ultimately driving IL-1β-driven inflammation.
+
+## Research Questions
+
+1. How do the gut microbiota and host cellular immune responses differ between acute and chronic colitis?
+2. Are microbiota changes associated with NLRP3/NAMPT-driven inflammation seen during UC?
+
+## Experimental Design (as in paper)
+Colon tissue from 10 mice at three different time points were collected and individual cells were isolated using the 10X Genomics GEM Single Cell 3′ RNA technology. The generated cDNA were sequenced with Illumina, and CellRanger was used to align the sequence to the reference. Finally, a cell x gene count matrix was generated. 
 
 ## Dataset details _(data_inspection.py)_
-
 ### AnnData Object
 Downloaded the AnnData object - `mmColon_single_cell_85K.h5ad`. This is a python data structure used in `scverse` to handle single cell sequencing datasets. Structure of AnnData object includes 
 - `.X` which is the primary data matrix with cells as rows and genes as columns, the values are gene expression values.
@@ -14,11 +21,12 @@ Downloaded the AnnData object - `mmColon_single_cell_85K.h5ad`. This is a python
 - `.obsm` / `.varm` is where multi-dimensional annotations for cells or genes, embeddings are stored here
 - `.layers` stores alternative representations of expression data (e.g., raw counts, normalized data, or scaled data) within the same object and `.uns` is for unstructured metadata for storing something else.
 
-### Inspection
+## Inspection
+
 1. Shape of gene expression matrix is 84,612 × 18,416 with raw counts. Each cell is mapped to thousands of genes - Curse of dimensionality.
 2. cell metadata contains: 'sid', 'n_genes', 'condition', 'batch', 'sample', 'celltype_major', 'celltype_minor', 'celltype_subset'
    a. Conditions include Acute colitis (AC), chronic colitis (CC), and healthy condition.
-4. gene metadata contains: 'gene_ids', 'feature_types', 'genome', 'n_cells'
+3. gene metadata contains: 'gene_ids', 'feature_types', 'genome', 'n_cells'
 
 ## Quality Control
 Calculated QC metrics with `scanpy.pp.calculate_qc_metrics`. 
@@ -35,7 +43,7 @@ Next, highly-variable genes (HGVs) are subsetted and PCA is performed. As a star
 
 
 ### Leiden clustering 
-After PCA, a graph-based clustering method called **Leiden** is used to connect each cell to its 10 nearest neighbors in the low-dimensional PCA space. This leads to groups of cells that are more connected to each other than to the rest of the graph. 
+After PCA, a graph-based clustering method called **Leiden** is used to connect each cell to its 10 nearest neighbors in the low-dimensional PCA space. This leads to groups of cells that are more connected to each other than to the rest of the graph. This way, cells with similar gene expression are grouped. 
 <img width="1644" height="562" alt="umap_condition_celltype" src="https://github.com/user-attachments/assets/4ba53492-4113-4683-8388-ec27c4a4f604" />
 
 
@@ -48,4 +56,9 @@ After PCA, a graph-based clustering method called **Leiden** is used to connect 
 4. Genes Namptp, Cyba, Ncf1p, Ncf2p, Ncf4 contradict paper's finding (yet to be investigated).
 
 
+
+
+## Personal motivation and Comments
+
+Although this project was carried out to understand the overall workflow of an sc-RNA seq pipeline and integrating it with gut metabarcoding data, this specific topic of UC was motivated after reading about the physiological, societal and mental burden of patients with UC. Several studies indicate that chronic illnesses like UC significantly compromise the emotional well-being, particularly among populations that are further impacted by economical and societal issues. Bioinformatics analyses help us dive deep into understanding the development and progression offering improved diagnosis and treatment across populations. 
 
