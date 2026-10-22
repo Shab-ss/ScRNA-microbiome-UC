@@ -30,7 +30,7 @@ Downloaded the AnnData object - `mmColon_single_cell_85K.h5ad`. This is a python
 
 ## Quality Control
 Calculated QC metrics with `scanpy.pp.calculate_qc_metrics`. 
-- `n_genes_by_counts` is used as QC metric to look for cells in conditions where gene count is too low (broken) or too high (doublets/technical artifact). Violin plot showed no spikes, so no additional filtering was required. 
+- `n_genes_by_counts` is used as QC metric to look for cells in conditions where gene count is too low (broken) or too high (doublets/technical artifact). 
 - `total_counts` per condition was calculated to see the total number of unique mRNA molecules captured for that cell. Visualization showed differences with CC having upto 17k counts, AC having 10k counts and healthy having around 12k counts. This raises a question - why do cells from different conditions have different total counts? Is it a biological effect or is it due to technical effects (depth etc.,)? 
 
 Therefore, to avoid differences in sequencing depths, normalization on the raw data is applied so that they are all in the same scale. Log transformation compresses the high expression data so that they do not dominate downstream analyses like PCA or clustering. 
