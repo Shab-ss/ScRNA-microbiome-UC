@@ -1,5 +1,7 @@
 # Integrative analysis of single cell RNA sequencing and gut microbiome metabarcoding data - Replicating the Analysis of Hong et al., 2024
 
+[![R](https://img.shields.io/badge/R-4.3+-276DC3?style=flat&logo=r&logoColor=white)](https://www.r-project.org/)
+
 ## Overview
 
 Ulcerative colitis (UC), a long-lasting inflammatory disease of the colon damages the epithelial lining of the intestine. This damage causes the bacteria in the gut to leak into the tissues thus triggering inflammation. In this paper, researchers experimentally induced UC in mice models using dextran sodium sulfate (DSS). Changing the dose and frequency helps understand the progression of acute UC to chronic UC. By parallely integrating multi-omic data where host transcriptomics denotes inflammation of macrophages, and 16s rRNA seq denotes microbial community shifts, the authors propose that dysbiosis results in  altered microbial metabolic outputs leading to macrophage inflammasome activation ultimately driving IL-1β-driven inflammation.
