@@ -1,0 +1,14 @@
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.12
+  - scanpy
+  - harmonypy
+  - leidenalg
+  - pandas
+  - scipy
+  - r-base=4.4
+  - r-seurat
+  - r-harmony
+  - r-optparse
+  - r-matrix
+  - bioconductor-deseq2
