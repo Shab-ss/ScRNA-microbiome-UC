@@ -20,7 +20,7 @@ a = p.parse_args()
 
 # Read anndata file object 
 ad = sc.read_h5ad(a.h5ad)
-
+ad.X = ad.layers[a.counts_layer].copy()
 # filter to include only celltype parameters 
 ad = ad[ad.obs[a.celltype_key].isin(a.macro_labels.split(','))].copy()
 sc.pp.filter_genes(ad, min_cells=10)
